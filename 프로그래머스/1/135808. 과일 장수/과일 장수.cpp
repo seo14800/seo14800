@@ -4,8 +4,7 @@
 using namespace std;
 
 int solution(int k, int m, vector<int> score) {
-    int answer = 0, lastCost = 0, appleNum = 0;
-    int box, boxCost;
+    int answer = 0, appleNum = 0, box = 0;
     vector<int> scoreMap(k + 1, 0);
 
     for(int i = 0; i < score.size(); i++)
@@ -15,12 +14,7 @@ int solution(int k, int m, vector<int> score) {
 
     for(int i = k; i > 0; i--)
     {
-        if( scoreMap[i] )
-        {
-            appleNum += scoreMap[i];
-            lastCost = i;
-        }
-
+        appleNum += scoreMap[i];
         if( appleNum >= m )
         {
             box = appleNum / m;
