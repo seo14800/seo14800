@@ -41,8 +41,6 @@ string solution(vector<int> numbers, string hand) {
         default:
             x = abs(numMap[it][0] - numMap[lastLoc[LEFT]][0]);
             y = abs(numMap[it][1] - numMap[lastLoc[LEFT]][1]);
-            if( y < 0 )
-                y = y * -1;
             distance[LEFT] = x + y;
 
             x = abs(numMap[it][0] - numMap[lastLoc[RIGHT]][0]);
